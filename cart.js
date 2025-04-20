@@ -190,7 +190,7 @@ class ShoppingCart {
     }
     
     // Create WhatsApp message
-    let message = "Hello, I would like to place an order for the following items:\n\n";
+    let message = "Bonjour, J'aimerais passer commande suivante:\n\n";
     
     let total = 0;
     this.items.forEach(item => {
@@ -203,8 +203,8 @@ class ShoppingCart {
     // Encode message for URL
     const encodedMessage = encodeURIComponent(message);
     
-    // WhatsApp phone number - replace with your actual number
-    const phoneNumber = "221789229104"; // Replace with your business phone number
+    // WhatsApp phone number
+    const phoneNumber = "221703019074";
     
     // Create WhatsApp URL
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -214,7 +214,7 @@ class ShoppingCart {
     
     // Clear cart after order is placed
     this.clearCart();
-    this.showToast('Order redirected to WhatsApp!', 'success');
+    this.showToast('Commande transmise vers WhatsApp!', 'success');
   }
   
   // Toggle currency between USD and CFA
