@@ -645,7 +645,7 @@
       <br>
       <p><i>Vous avez des questions ?</i></p>
       <p><i>Remplissez le formulaire, et nous vous répondrons aussi tôt que possible!</i></p><br>
-      <form id="contact-form" action="https://formspree.io/f/mqaprrqg"
+      <form id="contact-form" id="notify-form" class="email-form" action="https://formspree.io/f/mqaprrqg"
   method="POST">
         <div>
           <label for="name">Nom</label>
@@ -779,21 +779,59 @@
       });
     });
 
-    // Contact Form Submission
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      const formObject = {};
-      
+
+    
       formData.forEach((value, key) => {
         formObject[key] = value;
       });
+    });
+
+    // Form Submission Handler
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       
-      // Simulate form submission
-      setTimeout(() => {
-        showToast('Message sent successfully!', 'success');
-        contactForm.reset();
-      }, 1000);
+      // Disable the button to prevent multiple submissions
+      notifyButton.disabled = true;
+      notifyButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      // Get the form data
+      const formData = new FormData(contactForm);
+      const formObject = {};
+      
+      // Send the form data to Formspree
+      fetch(notifyForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(data => {
+        // Success - Show success toast
+        showToast('<i class="fas fa-check-circle"></i> Merci! Nous vous notifierons lorsque nous serons de retour en ligne.', 'success');
+        
+        // Update button state
+        notifyButton.innerHTML = '<i class="fas fa-check"></i> Vous serez notifié';
+        notifyButton.disabled = true;
+        notifyButton.style.backgroundColor = '#28a745';
+        
+        // Clear the input
+        emailInput.value = '';
+      })
+      .catch(error => {
+        // Error - Show error toast
+        showToast('<i class="fas fa-exclamation-circle"></i> Quelque chose s\'est mal passé. Veuillez réessayer.', 'error');
+        
+        // Re-enable the button
+        notifyButton.disabled = false;
+        notifyButton.innerHTML = '<i class="fas fa-bell"></i> Me Notifier lorsque c\'est prêt';
+      });
     });
 
 
