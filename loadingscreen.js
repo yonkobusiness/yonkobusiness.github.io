@@ -127,7 +127,7 @@
   // Create HTML structure
   overlay.innerHTML = `
     <div class="loading-logo">
-      <i class="fas fa-cart"></i> Yonko
+      <i class="fa-solid fa-cart-shopping"></i> Yonko
     </div>
     <div class="loading-spinner">
       <div class="spinner"></div>
