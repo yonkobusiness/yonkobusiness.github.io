@@ -4,4 +4,4 @@ Disallow: /cart/
 Disallow: /checkout/
 Disallow: /wishlist/
 
-Sitemap: https://lymashop.github.io/sitemap.xml
+Sitemap: https://yonkobusiness.github.io/sitemap.xml
