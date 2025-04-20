@@ -7,7 +7,7 @@
             position: fixed;
             top: calc(var(--header-height) + 15px);
             right: 25px;
-            background-color: #3a86ff;
+            background-color: #f39e21;
             width: 45px;
             height: 45px;
             border-radius: 50%;
