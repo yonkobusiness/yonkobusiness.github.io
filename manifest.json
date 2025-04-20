@@ -1,6 +1,6 @@
 {
-  "name": "LymaShop",
-  "short_name": "LymaShop",
+  "name": "YonkoBusiness",
+  "short_name": "Yonko",
   "description": "Votre boutique en ligne préférée",
   "default_locale": "en",
   "start_url": "./index.html",
@@ -102,12 +102,12 @@
 },
 
 "handle_links": {
-  "urls": ["https://lymashop.github.io/*"],
+  "urls": ["https://yonkobusiness.github.io/*"],
   "launch_handler": "navigate"
 },
 
 "protocol_handlers": [{
-  "protocol": "lymashop",
-  "url": "https://lymashop.github.io/?data=%s"
+  "protocol": "yonkobusiness",
+  "url": "https://yonkobusiness.github.io/?data=%s"
 }]
 }
