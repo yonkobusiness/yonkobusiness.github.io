@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ubuntu Details - Lyma Shop</title>
+  <title>Product Details - Yonko Business</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <style>
     :root {
-      --primary-color: #3a86ff;
-      --primary-dark: #0056b3;
+      --primary-color: #f39e21;
+      --primary-dark: #f39e21;
       --secondary-color: #ff6b6b;
       --accent-color: #4ecdc4;
       --light-bg: #f9f9f9;
@@ -524,7 +524,7 @@
   <!-- Header -->
   <header>
     <div class="top-header">
-      <div class="logo">Lyma Shop</div>
+      <div class="logo">Yonko</div>
       <div class="controls">
           <button id="cart-button" class="btn btn-primary"><a href="cart.html"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></button>
         <button id="theme-toggle" class="btn btn-primary"><i class="fas fa-moon"></i></button>
@@ -554,7 +554,7 @@
             <span class="product-badge">New</span>
             <h1 class="product-title">Ubuntu</h1>
             
-            <div class="product-rating">
+<!--             <div class="product-rating">
               <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -563,22 +563,21 @@
                 <i class="fas fa-star-half-alt"></i>
               </div>
               <span class="review-count">4.5 (128 reviews)</span>
-            </div>
+            </div> -->
             
             <div class="product-price">
-              <span>$129.99</span>
+              <span>150,000</span>
               <span class="original-price"></span>
             </div>
           </div>
           
           <div class="product-description">
-            <p>Ubuntu is a modern, user-friendly Linux-based operating system known for its stability, security, and ease of use. Backed by a strong community and regular updates, it powers desktops, servers, and cloud environments worldwide.
-</p><br>
-<p><i>We are selling Ubuntu, this is a placeholder</i></p>
+            <p>Ce produit est...</p><br>
+            <p><i>Disponible, 14 restants</i></p>
           </div>
           
           <div class="product-features">
-    <h3>Key Features</h3>
+    <h3>Caracèristiques principalest</h3>
     <ul class="feature-list">
         <li class="feature-item"><i class="fas fa-check-circle"></i> User-Friendly Interface</li>
         <li class="feature-item"><i class="fas fa-check-circle"></i> Regular Security Updates</li>
@@ -590,7 +589,7 @@
 </div>
           
           <div class="action-buttons">
-            <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+            <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i> Ajouter au panier</button>
             <button class="btn-wishlist"><i class="far fa-heart"></i></button>
           </div>
           
@@ -610,9 +609,9 @@
   
     <!-- Add -->
 <script src="cart.js"></script>
-<script src="wishlist.js"></script>
+<!-- <script src="wishlist.js"></script> -->
 <script src="loadingscreen.js"></script>
-<script src="back-button.js"></script>
+<!-- <script src="back-button.js"></script> -->
 <script src="pwa-install-banner.js"></script>
 
 <!-- Google tag (gtag.js) -->
@@ -763,7 +762,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/lymashop.github.io/service-worker.js')
+    navigator.serviceWorker.register('/yonkobusiness.github.io/service-worker.js')
       .then(registration => {
         console.log('Service Worker registered with scope:', registration.scope);
       })
