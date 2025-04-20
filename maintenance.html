@@ -420,7 +420,7 @@
   <!-- Header -->
   <header>
     <div class="top-header">
-      <div class="logo">Lyma Shop</div>
+      <div class="logo">Yonko</div>
       <div class="controls">
         <button id="theme-toggle" class="btn btn-primary"><i class="fas fa-moon"></i></button>
       </div>
@@ -430,9 +430,9 @@
   <!-- Main Content Area -->
   <main>
     <section class="maintenance-container animate__animated animate__fadeIn">
-      <h1 class="maintenance-title">Site Under Maintenance</h1>
-      <h2 class="maintenance-subtitle">We're making things better!</h2>
-      <p class="maintenance-message">Our team is currently performing some scheduled maintenance and upgrades. We'll be back online with a fresh new look and improved features soon!</p>
+      <h1 class="maintenance-title">Site Web Sous Maintenance</h1>
+      <h2 class="maintenance-subtitle">Nous améliorons les choses!</h2>
+      <p class="maintenance-message">Notre équipe procède actuellement à une maintenance programmée et des mises à niveau. Nous serons bientôt de retour en ligne avec un design tout neuf et des fonctionnalités améliorées!</p>
       
       <!-- Animated Tools -->
       <div class="tools-container">
@@ -447,7 +447,7 @@
         <div class="progress-bar">
           <div class="progress-fill"></div>
         </div>
-        <div class="timer" id="countdown">Estimated time remaining: <span id="time">1 hours</span></div>
+        <div class="timer" id="countdown">Temps restant estimé: <span id="time">1 hours</span></div>
       </div>
       
       <div class="maintenance-actions">
@@ -461,18 +461,18 @@
           >
           <input type="hidden" name="message" value="Website under maintenance">
           <button type="submit" id="notify-button" class="notification-button">
-            <i class="fas fa-bell"></i> Notify Me When Ready
+            <i class="fas fa-bell"></i> Me Prévenir lorsque c'est prêt
           </button>
         </form>
       </div>
       
       <!-- Contact Information -->
       <div class="contact-info">
-        <p>Need urgent assistance? Contact us:</p>
+        <p>Besoin d'une assistance urgente? Contactez nous:</p>
         <div class="social-links">
-          <a href="mailto:lymashop5s9@gmail.com?subject=Website%20under%20maintenance"><i class="fas fa-envelope"></i></a>
-          <a href="tel:+221776196418"><i class="fas fa-phone"></i></a>
-          <a href="tel:+221772470235"><i class="fas fa-phone"></i></a>
+          <a href="mailto:yonkobusinessp@gmail.com?subject=Website%20under%20maintenance"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+221703019074'"><i class="fas fa-phone"></i></a>
+          <a href="tel:+221789229104"><i class="fas fa-phone"></i></a>
         </div>        
       </div>
     </section>
@@ -563,10 +563,10 @@
       })
       .then(data => {
         // Success - Show success toast
-        showToast('<i class="fas fa-check-circle"></i> Thank you! We\'ll notify you when we\'re back online.', 'success');
+        showToast('<i class="fas fa-check-circle"></i> Merci! Nous vous notifierons lorsque nous serons de retour en ligne.', 'success');
         
         // Update button state
-        notifyButton.innerHTML = '<i class="fas fa-check"></i> You\'ll Be Notified';
+        notifyButton.innerHTML = '<i class="fas fa-check"></i> Vous serez notifié';
         notifyButton.disabled = true;
         notifyButton.style.backgroundColor = '#28a745';
         
@@ -575,11 +575,11 @@
       })
       .catch(error => {
         // Error - Show error toast
-        showToast('<i class="fas fa-exclamation-circle"></i> Something went wrong. Please try again.', 'error');
+        showToast('<i class="fas fa-exclamation-circle"></i> Quelque chose s\'est mal passé. Veuillez réessayer.', 'error');
         
         // Re-enable the button
         notifyButton.disabled = false;
-        notifyButton.innerHTML = '<i class="fas fa-bell"></i> Notify Me When Ready';
+        notifyButton.innerHTML = '<i class="fas fa-bell"></i> Me Notifier lorsque c\'est prêt';
       });
     });
 
@@ -619,7 +619,7 @@
       });
 
       // Show a welcome notification
-      showToast('<i class="fas fa-info-circle"></i> Maintenance in progress. We\'ll be back soon!');
+      showToast('<i class="fas fa-info-circle"></i> Maintenance en cours. Nous serons bientôt de retour!');
     });
   </script>
 </body>
