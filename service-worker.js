@@ -1,5 +1,5 @@
 // service-worker.js
-const CACHE_NAME = 'lyma-shop-v2';
+const CACHE_NAME = 'yonko-business-v5';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -8,14 +8,11 @@ const urlsToCache = [
   '/500.html',
   '/502.html',
   '/cart.html',
-  '/wishlist.html',
   '/about.html',
-  '/contact.html',
   '/catalog.html',
   '/product.html',
   '/pwa-install-banner.js',
   '/cart.js',
-  '/wishlist.js',
   '/loadingscreen.js',
   
   // Add your CSS, JS and main assets here
@@ -86,7 +83,7 @@ self.addEventListener('fetch', (event) => {
           .catch(() => {
             // If fetch fails (offline), try to return the cached 404.html
             if (event.request.mode === 'navigate') {
-              return caches.match('/lymashop.github.io/404.html');
+              return caches.match('/yonkobusiness.github.io/404.html');
             }
             // For non-navigation requests, just return whatever we have
             return response;
