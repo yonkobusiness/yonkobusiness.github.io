@@ -282,10 +282,10 @@
       
       <div class="error-actions">
         <a href="javascript:location.reload()" class="home-button">
-          <i class="fas fa-sync-alt"></i> Refresh Page
+          <i class="fas fa-sync-alt"></i> Rafraîchir La Page
         </a>
         <a href="index.html" class="home-button">
-          <i class="fas fa-home"></i> Back to Home
+          <i class="fas fa-home"></i> Retour A L'accueil
         </a>
       </div>
     </section>
@@ -371,14 +371,14 @@
       });
 
       // Show a 500 notification
-      showToast('Server error occurred. We\'re working on it!', 'error');
+      showToast('Une erreur serveur s\'est produite. Nous nous en occupons!', 'error');
     });
     
     // service worker
     
     if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/lymashop.github.io/service-worker.js')
+    navigator.serviceWorker.register('/yonkobusiness.github.io/service-worker.js')
       .then(registration => {
         console.log('Service Worker registered with scope:', registration.scope);
       })
