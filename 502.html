@@ -294,7 +294,7 @@
   <header>
     <!-- Top Header: Logo, Dark/Light Toggle, Cart -->
     <div class="top-header">
-      <div class="logo">Lyma Shop</div>
+      <div class="logo">Yonko</div>
       <div class="controls">
         <button id="theme-toggle" class="btn btn-primary"><i class="fas fa-moon"></i></button>
       </div>
@@ -305,8 +305,8 @@
   <main>
     <section class="error-container animate__animated animate__fadeIn">
       <div class="error-code">502</div>
-      <h1 class="error-title">Bad Gateway</h1>
-      <p class="error-message">We're having trouble communicating with our servers. This is typically a temporary issue that will resolve itself shortly.</p>
+      <h1 class="error-title">Mauvaise Porte</h1>
+      <p class="error-message">Nous avons des problèmes avec nos serveurs. Ce problème temporaire devrait se résoudre lui même dans peu de temps.</p>
       
       <!-- Decorative Server Connection Illustration -->
       <div class="error-image">
@@ -412,7 +412,7 @@
       });
 
       // Show a 502 notification
-      showToast('Server connection issue. We\'re working on it!', 'error');
+      showToast('Problème de connection au serveur. Nous nous en occupons!', 'error');
       
       // Auto refresh after a certain time (optional)
       // Uncomment the following lines to enable auto-refresh after 30 seconds
@@ -427,7 +427,7 @@
     
     if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/lymashop.github.io/service-worker.js')
+    navigator.serviceWorker.register('/yonkobusiness.github.io/service-worker.js')
       .then(registration => {
         console.log('Service Worker registered with scope:', registration.scope);
       })
