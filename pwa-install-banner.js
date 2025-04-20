@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fas fa-mobile-alt"></i>
       </div>
       <div class="install-text">
-        <strong>Ajoutez LymaShop à votre écran d'accueil</strong>
+        <strong>Ajoutez Yonko Business à votre écran d'accueil</strong>
         <p>Pour une expérience optimale et un accès rapide</p>
       </div>
       <div class="install-actions">
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       padding: 12px 20px;
       transform: translateY(100%);
       transition: transform 0.3s ease-in-out;
-      border-top: 3px solid var(--primary-color, #3a86ff);
+      border-top: 3px solid var(--primary-color, #f39e21);
     }
     
     body.dark-mode #pwa-install-banner {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     .install-icon {
       font-size: 2rem;
-      color: var(--primary-color, #3a86ff);
+      color: var(--primary-color, #f39e21);
       margin-right: 15px;
     }
     
