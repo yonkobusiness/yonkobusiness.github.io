@@ -739,6 +739,7 @@
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const backToTop = document.getElementById('back-to-top');
+    const contactForm = document.getElementById('contact-form');
     const toast = document.getElementById('toast');
 
     // Theme Toggle
@@ -775,6 +776,23 @@
         top: 0,
         behavior: 'smooth'
       });
+    });
+
+    // Contact Form Submission
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const formObject = {};
+      
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+      
+      // Simulate form submission
+      setTimeout(() => {
+        showToast('Message sent successfully!', 'success');
+        contactForm.reset();
+      }, 1000);
     });
 
 
