@@ -261,7 +261,7 @@
   <header>
     <!-- Top Header: Logo, Dark/Light Toggle, Cart -->
     <div class="top-header">
-      <div class="logo">Lyma Shop</div>
+      <div class="logo">Yonko</div>
       <div class="controls">
         <button id="theme-toggle" class="btn btn-primary"><i class="fas fa-moon"></i></button>
       </div>
@@ -272,8 +272,8 @@
   <main>
     <section class="error-container animate__animated animate__fadeIn">
       <div class="error-code">404</div>
-      <h1 class="error-title">Page Not Found</h1>
-      <p class="error-message">Oops! It seems like the page you're looking for has gone shopping elsewhere. Let's get you back on track!</p>
+      <h1 class="error-title">Page Non Trouvée</h1>
+      <p class="error-message">Oops! Il semblerait que la page que vous cherchez n'existe pas!</p>
       
       <!-- Decorative Icon -->
       <div class="error-image">
@@ -282,10 +282,10 @@
       
       <div class="error-actions">
         <a href="index.html" class="home-button">
-          <i class="fas fa-home"></i> Back to Home
+          <i class="fas fa-home"></i> Retour A L'accueil
         </a>
         <a href="catalog.html" class="home-button">
-          <i class="fas fa-tags"></i> Browse Catalog
+          <i class="fas fa-tags"></i> Naviguer Le Catalog
         </a>
       </div>
     </section>
@@ -371,14 +371,14 @@
       });
 
       // Show a 404 notification
-      showToast('Page not found. Redirecting to available options.', 'error');
+      showToast('Page Non Trouvée. Redirection aux options disponibles.', 'error');
     });
     
     // service worker
     
     if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/lymashop.github.io/service-worker.js')
+    navigator.serviceWorker.register('/yonkobusiness.github.io/service-worker.js')
       .then(registration => {
         console.log('Service Worker registered with scope:', registration.scope);
       })
