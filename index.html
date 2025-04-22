@@ -645,14 +645,16 @@
 
 
 
-    <section id="home" class="animate__animated animate__fadeIn">
-      <h1>Installer comme application ?</h1>
+    <section id="installInfo">
+      <section id="home" class="animate__animated animate__fadeIn">
+      <h1>Installer application ?</h1>
       <br>
       <div>
           <img src="undraw_android_vygj.svg" width="50%" alt="" margin-left="25%">
       </div>
       <p>Installez puis accèdez plus facilement à notre site web depuis écran principale.</p>
-      <button id="installBtn" class="btn btn-primary" style="display: none;"><i class="fa-solid fa-download"></i>Installer</button>
+      <button class="btn btn-primary" style="display: none;"><i class="fa-solid fa-download"></i>Installer</button>
+      </section>
     </section>
     
     
@@ -744,7 +746,7 @@
       deferredPrompt = null;
 
       // Optionally hide the button
-      document.getElementById('installBtn').style.display = 'none';
+      document.getElementById('installInfo').style.display = 'none';
     }
   });
 </script>
