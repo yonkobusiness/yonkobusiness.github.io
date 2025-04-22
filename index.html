@@ -640,9 +640,22 @@
           <img src="undraw_contact-us_kcoa.svg" width="50%" alt="" margin-left="25%">
       </div>
       <p>Contactez nous facilement si vous rencontrez un problème ou si vous avez une suggestion d'amélioraiton.</p>
-      <button class="btn btn-primary"><a href="catalog.html"><i class="fas fa-tag"></i> Voir le Calalogue</a></button>
+      <button class="btn btn-primary"><a href="catalog.html"></i><i class="fa-solid fa-phone"></i> Voir le formulaire</a></button>
     </section>
 
+
+
+    <section id="home" class="animate__animated animate__fadeIn">
+      <h1>Installer comme application ?</h1>
+      <br>
+      <div>
+          <img src="undraw_android_vygj.svg" width="50%" alt="" margin-left="25%">
+      </div>
+      <p>Installez puis accèdez plus facilement à notre site web depuis écran principale.</p>
+      <button id="installBtn" style="display: none;">"><i class="fa-solid fa-download"></i>Installer</button>
+    </section>
+
+  <button >Install App</button>
 
     
 <!--     <section width="90%">
@@ -705,6 +718,39 @@
 
   <!-- Back to Top Button -->
   <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+  let deferredPrompt;
+
+  // Listen for the beforeinstallprompt event
+  window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+
+    // Show your custom install button
+    document.getElementById('installBtn').style.display = 'inline-block';
+  });
+
+  // When the button is clicked
+  document.getElementById('installBtn').addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt(); // Show the install prompt
+
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`User response to the install prompt: ${outcome}`);
+
+      // Clear the saved prompt since it can't be used again
+      deferredPrompt = null;
+
+      // Optionally hide the button
+      document.getElementById('installBtn').style.display = 'none';
+    }
+  });
+</script>
+
 
   <!-- JavaScript -->
 <!--   <script src="back-button.js"></script> -->
