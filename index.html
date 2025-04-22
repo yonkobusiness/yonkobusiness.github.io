@@ -653,7 +653,7 @@
           <img src="undraw_android_vygj.svg" width="50%" alt="" margin-left="25%">
       </div>
       <p>Installez puis accèdez plus facilement à notre site web depuis écran principale.</p>
-      <button class="btn btn-primary" style="display: none;"><i class="fa-solid fa-download"></i>Installer</button>
+      <button id="installBtn" class="btn btn-primary" style="display: none;"><i class="fa-solid fa-download"></i>Installer</button>
       </section>
     </section>
     
@@ -722,34 +722,38 @@
 <script>
   let deferredPrompt;
 
-  // Listen for the beforeinstallprompt event
   window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
-
-    // Stash the event so it can be triggered later.
     deferredPrompt = e;
 
-    // Show your custom install button
-    document.getElementById('installBtn').style.display = 'inline-block';
+    // Show the section when install is available
+    document.getElementById('installInfo').style.display = 'block';
   });
 
-  // When the button is clicked
   document.getElementById('installBtn').addEventListener('click', async () => {
     if (deferredPrompt) {
-      deferredPrompt.prompt(); // Show the install prompt
-
+      deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
-      console.log(`User response to the install prompt: ${outcome}`);
 
-      // Clear the saved prompt since it can't be used again
+      if (outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+        // Hide the section once installed
+        document.getElementById('installInfo').style.display = 'none';
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+
       deferredPrompt = null;
-
-      // Optionally hide the button
-      document.getElementById('installInfo').style.display = 'none';
     }
   });
+
+  // Optional: Also hide if the app is already installed
+  window.addEventListener('appinstalled', () => {
+    console.log('PWA was installed');
+    document.getElementById('installInfo').style.display = 'none';
+  });
 </script>
+
 
 
   <!-- JavaScript -->
