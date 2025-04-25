@@ -41,10 +41,5 @@ Visit us at [5s9 Horizons](https://5s9horizons.github.io).
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License**. Feel free to use and modify it as needed.
-
----
 
 Thank you for choosing Yonko Business. Happy shopping! 🎉
