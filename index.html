@@ -574,6 +574,65 @@
     .delay-200 { animation-delay: 0.2s; }
     .delay-300 { animation-delay: 0.3s; }
     .delay-400 { animation-delay: 0.4s; }
+
+.product-display {
+  width: 100%;
+  height: 33vh; /* One-third of the screen height */
+  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  background-color: var(--light-bg);
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-display-container {
+  display: flex;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--light-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-card button {
+  margin: 10px 0;
+  padding: 8px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.product-card button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
   </style>
 </head>
 <body>
@@ -607,6 +666,34 @@
 
   <!-- Main Content Area -->
   <main>
+
+    <div class="product-display">
+      <div class="product-display-container">
+        <!-- Example Product Card -->
+        <div class="product-card">
+          <img src="img/narcosGroup.jpeg" alt="Narcos">
+          <button class="btn btn-success add-to-cart"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <div class="product-card">
+          <img src="img/astroGold.jpeg" alt="Astro Gold">
+          <button class="btn btn-success add-to-cart"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <div class="product-card">
+          <img src="img/daisy.jpeg" alt="Miss Daisy">
+          <button class="btn btn-success add-to-cart"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <!-- Add more product cards as needed -->
+        <div class="product-card">
+          <img src="img/astroGold.jpeg" alt="Astro Gold">
+          <button class="btn btn-success add-to-cart"><i class="fas fa-cart-plus"></i></button>
+        </div>
+        <div class="product-card">
+          <img src="img/daisy.jpeg" alt="Miss Daisy">
+          <button class="btn btn-success add-to-cart"><i class="fas fa-cart-plus"></i></button>
+        </div>
+      </div>
+    </div>
+
     <!-- Hero Section -->
     <section id="home" class="animate__animated animate__fadeIn">
       <h1>Bienvenue chez Yonko Business</h1>
@@ -643,7 +730,7 @@
       <button class="btn btn-primary"><a href="about.html"></i><i class="fa-solid fa-phone"></i> Voir le formulaire</a></button>
     </section>
 
-
+    
 
 <!--     <section id="home" class="animate__animated animate__fadeIn">
       <h1>Installer application ?</h1>
@@ -940,6 +1027,14 @@
   if (maintenanceMode) {
     window.location.href = "https://yonkobusiness.github.io/maintenance.html";
   }
+</script>
+
+<script>
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      showToast('Product added to cart!', 'success');
+    });
+  });
 </script>
 </body>
 </html>
