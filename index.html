@@ -574,6 +574,69 @@
     .delay-200 { animation-delay: 0.2s; }
     .delay-300 { animation-delay: 0.3s; }
     .delay-400 { animation-delay: 0.4s; }
+
+    #carousel-banner {
+      width: 100%;
+      height: 400px;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .carousel-content {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .carousel-content h2 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .carousel-content p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    .carousel-btn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
   </style>
 </head>
 <body>
@@ -607,10 +670,42 @@
 
   <!-- Main Content Area -->
   <main>
+
     <!-- Banner Section -->
     <section id="banner" style="background-color: #f39e21; color: white; text-align: center; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
       <h2>🐔 Yonko Chicken arrive bientôt!</h2>
       <p>Chez Yonko Business, on vend tous sauf des rêves.</p>
+    </section>
+
+    <!-- Carousel Banner Section -->
+    <section id="carousel-banner" style="position: relative; overflow: hidden; margin-bottom: 40px;">
+      <div class="carousel">
+        <!-- Slide 1 -->
+        <div class="carousel-slide" style="background-image: url('product1.jpg');">
+          <div class="carousel-content" style="color: #ffffff;">
+            <h2>Produit 1</h2>
+            <p>Découvrez notre produit phare avec une qualité exceptionnelle.</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide" style="background-image: url('product2.jpg');">
+          <div class="carousel-content" style="color: #f39e21;">
+            <h2>Produit 2</h2>
+            <p>Un produit qui répond à tous vos besoins.</p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide" style="background-image: url('product3.jpg');">
+          <div class="carousel-content" style="color: #ff6b6b;">
+            <h2>Produit 3</h2>
+            <p>La meilleure qualité au meilleur prix.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+      <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
     </section>
 
     <!-- Hero Section -->
@@ -946,6 +1041,37 @@
   if (maintenanceMode) {
     window.location.href = "https://yonkobusiness.github.io/maintenance.html";
   }
+
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+
+    if (index >= totalSlides) {
+      currentSlide = 0;
+    } else if (index < 0) {
+      currentSlide = totalSlides - 1;
+    } else {
+      currentSlide = index;
+    }
+
+    const carousel = document.querySelector('.carousel');
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
 </script>
 </body>
 </html>
