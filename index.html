@@ -56,7 +56,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/dqfqbzmfd/image/upload/v1755603793/yonkoLogoRoundCorner_jdx0x3.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/dqfqbzmfd/image/upload/v1755603793/yonkoLogoRoundCorner_jdx0x3.png">
     <link rel="icon" href="https://res.cloudinary.com/dqfqbzmfd/image/upload/v1755603793/yonkoLogoRoundCorner_jdx0x3.png" sizes="any">
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="/assets/manifest-DhV0-4Le.json" />
+
 
     <title>Yonko</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -90,7 +91,65 @@
         overscroll-behavior-y: contain; /* Prevents pull-to-refresh on mobile when not needed */
       }
     </style>
-<link rel="stylesheet" href="/index.css">
+    
+    
+    <style>
+  /* Basic scrollbar styling for a more modern look */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ffaa00; /* primary color */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cc8800; /* primary-dark color */
+  }
+
+  /* For dark mode */
+  .dark ::-webkit-scrollbar-track {
+    background: #2c3e50; /* A dark background for the track */
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #ffcc4d; /* lighter primary for dark mode */
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #ffaa00; /* default primary on hover */
+  }
+
+  body {
+    overscroll-behavior-y: contain; /* Prevents pull-to-refresh on mobile when not needed */
+  }
+</style>
+
+
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-CLUNLXyM.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BHaHfdcQ.css">
+  
+  
+  
+<link rel="stylesheet" href="/assets/index-BHaHfdcQ.css">
+<script src="/assets/index-CLUNLXyM.js"></script>
 </head>
   <body class="bg-secondary dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
     <div id="root"></div>
